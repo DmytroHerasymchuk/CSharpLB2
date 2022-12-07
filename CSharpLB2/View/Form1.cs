@@ -153,6 +153,7 @@ namespace CSharpLB2
             }
         }
 
+
         private void CompareButton_Click(object sender, EventArgs e)
         {
             if(CheckGridIsNotEmpty())
