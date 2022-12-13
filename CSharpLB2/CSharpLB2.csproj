@@ -47,6 +47,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\AutoShop.cs" />
+    <Compile Include="Models\Car.cs" />
+    <Compile Include="Models\CarEnums\CarBrand.cs" />
+    <Compile Include="Models\CarEnums\ControlType.cs" />
+    <Compile Include="Models\WorkerEnums\Education.cs" />
+    <Compile Include="Models\CarEnums\FuelType.cs" />
+    <Compile Include="Models\WorkerEnums\Position.cs" />
+    <Compile Include="Models\Worker.cs" />
     <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
