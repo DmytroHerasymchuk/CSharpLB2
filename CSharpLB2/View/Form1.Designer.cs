@@ -57,24 +57,11 @@
             this.SecondComboBox = new System.Windows.Forms.ComboBox();
             this.FirstComboBox = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.CostsButton = new System.Windows.Forms.Button();
-            this.SalaryButton = new System.Windows.Forms.Button();
-            this.IncomeButton = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.HireDecrementButton = new System.Windows.Forms.Button();
-            this.HireIncrementButton = new System.Windows.Forms.Button();
-            this.TaxCalcButton = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
             this.ToStringButton = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.FireEmployeeButton = new System.Windows.Forms.Button();
             this.HireEmployeeButton = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.YearCalcButton = new System.Windows.Forms.Button();
-            this.YearTextBox = new System.Windows.Forms.TextBox();
-            this.MonthTextBox = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.MonthCalcButton = new System.Windows.Forms.Button();
             this.AllShopsGrid = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -305,24 +292,11 @@
             this.ListAllPanel.Controls.Add(this.SecondComboBox);
             this.ListAllPanel.Controls.Add(this.FirstComboBox);
             this.ListAllPanel.Controls.Add(this.label15);
-            this.ListAllPanel.Controls.Add(this.CostsButton);
-            this.ListAllPanel.Controls.Add(this.SalaryButton);
-            this.ListAllPanel.Controls.Add(this.IncomeButton);
-            this.ListAllPanel.Controls.Add(this.label14);
-            this.ListAllPanel.Controls.Add(this.HireDecrementButton);
-            this.ListAllPanel.Controls.Add(this.HireIncrementButton);
-            this.ListAllPanel.Controls.Add(this.TaxCalcButton);
-            this.ListAllPanel.Controls.Add(this.label13);
             this.ListAllPanel.Controls.Add(this.ToStringButton);
             this.ListAllPanel.Controls.Add(this.label12);
             this.ListAllPanel.Controls.Add(this.FireEmployeeButton);
             this.ListAllPanel.Controls.Add(this.HireEmployeeButton);
             this.ListAllPanel.Controls.Add(this.label11);
-            this.ListAllPanel.Controls.Add(this.YearCalcButton);
-            this.ListAllPanel.Controls.Add(this.YearTextBox);
-            this.ListAllPanel.Controls.Add(this.MonthTextBox);
-            this.ListAllPanel.Controls.Add(this.label10);
-            this.ListAllPanel.Controls.Add(this.MonthCalcButton);
             this.ListAllPanel.Controls.Add(this.AllShopsGrid);
             this.ListAllPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ListAllPanel.Location = new System.Drawing.Point(12, 52);
@@ -368,86 +342,6 @@
             this.label15.TabIndex = 19;
             this.label15.Text = "Compare Shops";
             // 
-            // CostsButton
-            // 
-            this.CostsButton.Location = new System.Drawing.Point(649, 596);
-            this.CostsButton.Name = "CostsButton";
-            this.CostsButton.Size = new System.Drawing.Size(115, 40);
-            this.CostsButton.TabIndex = 18;
-            this.CostsButton.Text = "Costs";
-            this.CostsButton.UseVisualStyleBackColor = true;
-            this.CostsButton.Click += new System.EventHandler(this.CostsButton_Click);
-            // 
-            // SalaryButton
-            // 
-            this.SalaryButton.Location = new System.Drawing.Point(709, 483);
-            this.SalaryButton.Name = "SalaryButton";
-            this.SalaryButton.Size = new System.Drawing.Size(115, 40);
-            this.SalaryButton.TabIndex = 17;
-            this.SalaryButton.Text = "Salary";
-            this.SalaryButton.UseVisualStyleBackColor = true;
-            this.SalaryButton.Click += new System.EventHandler(this.SalaryButton_Click);
-            // 
-            // IncomeButton
-            // 
-            this.IncomeButton.Location = new System.Drawing.Point(588, 483);
-            this.IncomeButton.Name = "IncomeButton";
-            this.IncomeButton.Size = new System.Drawing.Size(115, 40);
-            this.IncomeButton.TabIndex = 16;
-            this.IncomeButton.Text = "Income";
-            this.IncomeButton.UseVisualStyleBackColor = true;
-            this.IncomeButton.Click += new System.EventHandler(this.IncomeButton_Click);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label14.Location = new System.Drawing.Point(675, 450);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(63, 20);
-            this.label14.TabIndex = 15;
-            this.label14.Text = "Indexer";
-            // 
-            // HireDecrementButton
-            // 
-            this.HireDecrementButton.Location = new System.Drawing.Point(423, 579);
-            this.HireDecrementButton.Name = "HireDecrementButton";
-            this.HireDecrementButton.Size = new System.Drawing.Size(115, 57);
-            this.HireDecrementButton.TabIndex = 14;
-            this.HireDecrementButton.Text = "Hire Decrement";
-            this.HireDecrementButton.UseVisualStyleBackColor = true;
-            this.HireDecrementButton.Click += new System.EventHandler(this.HireDecrementButton_Click);
-            // 
-            // HireIncrementButton
-            // 
-            this.HireIncrementButton.Location = new System.Drawing.Point(300, 579);
-            this.HireIncrementButton.Name = "HireIncrementButton";
-            this.HireIncrementButton.Size = new System.Drawing.Size(115, 57);
-            this.HireIncrementButton.TabIndex = 13;
-            this.HireIncrementButton.Text = "Hire Increment";
-            this.HireIncrementButton.UseVisualStyleBackColor = true;
-            this.HireIncrementButton.Click += new System.EventHandler(this.HireIncrementButton_Click);
-            // 
-            // TaxCalcButton
-            // 
-            this.TaxCalcButton.Location = new System.Drawing.Point(889, 483);
-            this.TaxCalcButton.Name = "TaxCalcButton";
-            this.TaxCalcButton.Size = new System.Drawing.Size(115, 40);
-            this.TaxCalcButton.TabIndex = 12;
-            this.TaxCalcButton.Text = "Calculate";
-            this.TaxCalcButton.UseVisualStyleBackColor = true;
-            this.TaxCalcButton.Click += new System.EventHandler(this.TaxCalcButton_Click);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label13.Location = new System.Drawing.Point(929, 454);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(36, 20);
-            this.label13.TabIndex = 11;
-            this.label13.Text = "Tax";
-            // 
             // ToStringButton
             // 
             this.ToStringButton.Location = new System.Drawing.Point(889, 596);
@@ -470,7 +364,7 @@
             // 
             // FireEmployeeButton
             // 
-            this.FireEmployeeButton.Location = new System.Drawing.Point(423, 483);
+            this.FireEmployeeButton.Location = new System.Drawing.Point(146, 483);
             this.FireEmployeeButton.Name = "FireEmployeeButton";
             this.FireEmployeeButton.Size = new System.Drawing.Size(115, 40);
             this.FireEmployeeButton.TabIndex = 8;
@@ -480,7 +374,7 @@
             // 
             // HireEmployeeButton
             // 
-            this.HireEmployeeButton.Location = new System.Drawing.Point(300, 483);
+            this.HireEmployeeButton.Location = new System.Drawing.Point(11, 483);
             this.HireEmployeeButton.Name = "HireEmployeeButton";
             this.HireEmployeeButton.Size = new System.Drawing.Size(115, 40);
             this.HireEmployeeButton.TabIndex = 7;
@@ -492,57 +386,11 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(370, 450);
+            this.label11.Location = new System.Drawing.Point(86, 450);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(91, 20);
             this.label11.TabIndex = 6;
             this.label11.Text = "Employees";
-            // 
-            // YearCalcButton
-            // 
-            this.YearCalcButton.Location = new System.Drawing.Point(13, 596);
-            this.YearCalcButton.Name = "YearCalcButton";
-            this.YearCalcButton.Size = new System.Drawing.Size(115, 40);
-            this.YearCalcButton.TabIndex = 5;
-            this.YearCalcButton.Text = "Year";
-            this.YearCalcButton.UseVisualStyleBackColor = true;
-            this.YearCalcButton.Click += new System.EventHandler(this.YearCalcButton_Click);
-            // 
-            // YearTextBox
-            // 
-            this.YearTextBox.Location = new System.Drawing.Point(167, 603);
-            this.YearTextBox.Name = "YearTextBox";
-            this.YearTextBox.Size = new System.Drawing.Size(100, 26);
-            this.YearTextBox.TabIndex = 4;
-            this.YearTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.YearTextBox_Validating);
-            // 
-            // MonthTextBox
-            // 
-            this.MonthTextBox.Location = new System.Drawing.Point(167, 493);
-            this.MonthTextBox.Name = "MonthTextBox";
-            this.MonthTextBox.Size = new System.Drawing.Size(100, 26);
-            this.MonthTextBox.TabIndex = 3;
-            this.MonthTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.MonthTextBox_Validating);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(72, 450);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(144, 20);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Income Calculator";
-            // 
-            // MonthCalcButton
-            // 
-            this.MonthCalcButton.Location = new System.Drawing.Point(13, 486);
-            this.MonthCalcButton.Name = "MonthCalcButton";
-            this.MonthCalcButton.Size = new System.Drawing.Size(115, 40);
-            this.MonthCalcButton.TabIndex = 1;
-            this.MonthCalcButton.Text = "Month";
-            this.MonthCalcButton.UseVisualStyleBackColor = true;
-            this.MonthCalcButton.Click += new System.EventHandler(this.MonthCalcButton_Click);
             // 
             // AllShopsGrid
             // 
@@ -717,28 +565,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.TextBox MonthTextBox;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button MonthCalcButton;
         private System.Windows.Forms.Button FireEmployeeButton;
         private System.Windows.Forms.Button HireEmployeeButton;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button ToStringButton;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button TaxCalcButton;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button HireDecrementButton;
-        private System.Windows.Forms.Button HireIncrementButton;
-        private System.Windows.Forms.Button CostsButton;
-        private System.Windows.Forms.Button SalaryButton;
-        private System.Windows.Forms.Button IncomeButton;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox SecondComboBox;
         private System.Windows.Forms.ComboBox FirstComboBox;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button CompareButton;
-        private System.Windows.Forms.Button YearCalcButton;
-        private System.Windows.Forms.TextBox YearTextBox;
         private System.Windows.Forms.Button ExitButton;
     }
 }

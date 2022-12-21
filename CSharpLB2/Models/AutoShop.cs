@@ -3,25 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CSharpLB2.Models.CarEnums;
 
 namespace CSharpLB2.Models
 {
     public class AutoShop : IComparable<AutoShop>
     {
         public string Name { get; set; }
-        public int NumberOfDepartments { get; set; }
-        public int NumberOfEmployees { get; set; }
+        public int NumberOfCars
+        {
+            get
+            {
+                return Cars.Count;
+            }
+
+        }
+        public int NumberOfEmployees
+        {
+            get
+            {
+                return Workers.Count;
+
+            }
+
+        }
         public string Address { get; set; }
 
         public int AverageMonthlyMoneyIncome { get; set; }
         public int AllSalaryOfEmployees { get; set; }
         public int AllCostsOfGoods { get; set; }
         public int CountOfGoods { get; set; }
-
-
+        public List<Car> Cars = new List<Car>();
+        private Dictionary<string, Worker> Workers = new Dictionary<string, Worker>();
         public AutoShop(string name,
-                        int numberOfDepartments,
-                        int numberOfEmployees,
                         string address,
                         int averageMonthlyMoneyIncome,
                         int allSalaryOfEmployees,
@@ -29,8 +43,6 @@ namespace CSharpLB2.Models
                         int countOfGoods)
         {
             Name = name;
-            NumberOfDepartments = numberOfDepartments;
-            NumberOfEmployees = numberOfEmployees;
             Address = address;
             AverageMonthlyMoneyIncome = averageMonthlyMoneyIncome;
             AllSalaryOfEmployees = allSalaryOfEmployees;
@@ -38,69 +50,54 @@ namespace CSharpLB2.Models
             CountOfGoods = countOfGoods;
         }
 
-        public int this[string propName]
-        {
-            get
-            {
-                switch (propName)
-                {
-                    case "Income": return AverageMonthlyMoneyIncome;
-                    case "Salary": return AllSalaryOfEmployees;
-                    case "Costs": return AllCostsOfGoods;
-                    default: throw new Exception("Unknown property");
-                }
-            }
-        }
-        public int CalcuteIncomeMonth(int countMonth)
-        {
-            return countMonth * AverageMonthlyMoneyIncome;
-        }
+     
 
-        public int CalcuteIncomeYear(int countYear)
-        {
-            return countYear * AverageMonthlyMoneyIncome * 12;
-        }
 
-        public void HireEmployee()
+        public void HireEmployee(Worker person)
         {
-           
-            NumberOfEmployees++;
+            Workers.Add(person.IPN, person);
         }
-        public void FireEmployee()
+        public void FireEmployee(string IPN)
         {
             if (NumberOfEmployees > 0)
             {
-                NumberOfEmployees--;
+                Workers.Remove(IPN);
             }
+        }
+
+        public void FireAll()
+        {
+            Workers.Clear();
+        }
+
+        public void AddCars(Car car, int quantity)
+        {
+            for(int i = 0; i < quantity; i++)
+            {
+                Cars.Add(car);
+                AllCostsOfGoods -= car.PriceForShop;
+            }
+        }
+
+        public void SellCar(Car car)
+        {
+            Cars.Remove(car);
+            AllCostsOfGoods += car.PriceForClient;
         }
 
         public override string ToString()
         {
-            return String.Format("Name: {0}, Address: {1}, Departments: {2}, Employees: {3}, Income: {4}, Employees Salary: {5}, Goods Count {6}, Goods Costs {7}",
-                          Name, Address, NumberOfDepartments, NumberOfEmployees, AverageMonthlyMoneyIncome, AllSalaryOfEmployees, CountOfGoods, AllCostsOfGoods);
+            return String.Format("Name: {0}, Address: {1}, Cars: {2}, Employees: {3}, Income: {4}, Employees Salary: {5}, Goods Count {6}, Goods Costs {7}",
+                          Name, Address, NumberOfCars, NumberOfEmployees, AverageMonthlyMoneyIncome, AllSalaryOfEmployees, CountOfGoods, AllCostsOfGoods);
         }
 
-        public int CalcTax()
-        {
-            return (AverageMonthlyMoneyIncome * 12 * 17) / 100;
-        }
-
-        public static AutoShop operator ++(AutoShop shop)
-        {
-            shop.NumberOfEmployees++;
-            return shop;
-        }
-
-        public static AutoShop operator --(AutoShop shop)
-        {
-            shop.NumberOfEmployees--;
-            return shop;
-        }
+      
+        
 
         public int CompareTo(AutoShop shop)
         {
             if (shop is null) throw new ArgumentException("Inccorect parameter");
-            return NumberOfDepartments - shop.NumberOfDepartments;
+            return NumberOfCars - shop.NumberOfCars;
         }
     }
 }

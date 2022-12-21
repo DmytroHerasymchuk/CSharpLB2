@@ -59,23 +59,7 @@ namespace CSharpLB2
                                       Convert.ToInt32(CountOfGoodsTextBox.Text));
             }
         }
-        private void MonthCalcButton_Click(object sender, EventArgs e)
-        {
-            if (CheckGridIsNotEmpty() && Validator.Validate(MonthTextBox.Text))
-            {
-                int countMonth = Convert.ToInt32(MonthTextBox.Text);
-                _viewModel.CalculateIncomeYear(AllShopsGrid, countMonth);
-            }
-        }
-
-        private void YearCalcButton_Click(object sender, EventArgs e)
-        {
-            if (CheckGridIsNotEmpty() && Validator.Validate(YearTextBox.Text) )
-            {
-                int countYear = Convert.ToInt32(YearTextBox.Text);
-                _viewModel.CalculateIncomeYear(AllShopsGrid, countYear);
-            }
-        }
+        
 
         private void HireEmployeeButton_Click(object sender, EventArgs e)
         {
@@ -103,55 +87,11 @@ namespace CSharpLB2
             }
         }
 
-        private void TaxCalcButton_Click(object sender, EventArgs e)
-        {
-            if (CheckGridIsNotEmpty())
-            {
-                _viewModel.CalculateTax(AllShopsGrid);
-            }
-        }
+       
 
-        private void HireIncrementButton_Click(object sender, EventArgs e)
-        {
-            if (CheckGridIsNotEmpty())
-            {
-                _viewModel.HireInc(AllShopsGrid);
-                AllShopsGrid.Refresh();
-            }
-        }
+       
 
-        private void HireDecrementButton_Click(object sender, EventArgs e)
-        {
-            if (CheckGridIsNotEmpty())
-            {
-                _viewModel.FireDec(AllShopsGrid);
-                AllShopsGrid.Refresh();
-            }
-        }
-
-        private void IncomeButton_Click(object sender, EventArgs e)
-        {
-            if (CheckGridIsNotEmpty())
-            {
-                _viewModel.GetIncome(AllShopsGrid);
-            }
-        }
-
-        private void SalaryButton_Click(object sender, EventArgs e)
-        {
-            if (CheckGridIsNotEmpty())
-            {
-                _viewModel.GetSalary(AllShopsGrid);
-            }
-        }
-
-        private void CostsButton_Click(object sender, EventArgs e)
-        {
-            if (CheckGridIsNotEmpty())
-            {
-                _viewModel.GetCosts(AllShopsGrid);
-            }
-        }
+       
 
 
         private void CompareButton_Click(object sender, EventArgs e)
@@ -344,50 +284,8 @@ namespace CSharpLB2
             }
         }
 
-        private void MonthTextBox_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrEmpty(MonthTextBox.Text))
-            {
+        
 
-                errorProvider1.SetError(MonthTextBox, "Value should not be left blank!");
-            }
-            else
-            {
-                if (int.TryParse(MonthTextBox.Text, out int i))
-                {
-
-                    errorProvider1.SetError(MonthTextBox, "");
-                }
-                else
-                {
-
-                    errorProvider1.SetError(MonthTextBox, "Value should be integer value!");
-                }
-
-            }
-        }
-
-        private void YearTextBox_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrEmpty(YearTextBox.Text))
-            {
-
-                errorProvider1.SetError(YearTextBox, "Value should not be left blank!");
-            }
-            else
-            {
-                if (int.TryParse(YearTextBox.Text, out int i))
-                {
-
-                    errorProvider1.SetError(YearTextBox, "");
-                }
-                else
-                {
-
-                    errorProvider1.SetError(YearTextBox, "Value should be integer value!");
-                }
-
-            }
-        }
+        
     }
 }

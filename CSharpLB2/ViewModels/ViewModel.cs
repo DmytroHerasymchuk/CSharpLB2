@@ -15,7 +15,7 @@ namespace CSharpLB2.ViewModels
         public BindingList<AutoShop> Shops = new BindingList<AutoShop>();
 
         public void CreateShop(string name,
-                        int numberOfDepartments,
+                        int numberOfCars,
                         int numberOfEmployees,
                         string address,
                         int averageMonthlyMoneyIncome,
@@ -24,8 +24,6 @@ namespace CSharpLB2.ViewModels
                         int countOfGoods)
         {
             AutoShop shop = new AutoShop(name,
-                        numberOfDepartments,
-                        numberOfEmployees,
                         address,
                         averageMonthlyMoneyIncome,
                         allSalaryOfEmployees,
@@ -34,37 +32,17 @@ namespace CSharpLB2.ViewModels
             Shops.Add(shop);
             MesssageBoxPrint("Shop created!");
         }
-        public void CalculateIncomeYear(DataGridView dataGridView, int years)
-        {
-            MesssageBoxPrint(GetShopFromDataGrid(dataGridView).CalcuteIncomeYear(years).ToString());
-        }
-        public void CalculateIncomeMonth(DataGridView dataGridView, int months)
-        {
-            MesssageBoxPrint(GetShopFromDataGrid(dataGridView).CalcuteIncomeMonth(months).ToString());
-        }
+        
 
         public void Hire(DataGridView dataGridView)
         {
-            GetShopFromDataGrid(dataGridView).HireEmployee();
+            //GetShopFromDataGrid(dataGridView).HireEmployee();
         }
         public void Fire(DataGridView dataGridView)
         {
-            GetShopFromDataGrid(dataGridView).FireEmployee();
+            //GetShopFromDataGrid(dataGridView).FireEmployee();
         }
-        public void HireInc(DataGridView dataGridView)
-        {
-            AutoShop shop = GetShopFromDataGrid(dataGridView);
-            shop++;
-        }
-        public void FireDec(DataGridView dataGridView)
-        {
-            AutoShop shop = GetShopFromDataGrid(dataGridView);
-            shop--;
-        }
-        public void CalculateTax(DataGridView dataGridView)
-        {
-            MesssageBoxPrint(GetShopFromDataGrid(dataGridView).CalcTax().ToString());
-        }
+        
         public void ShopToString(DataGridView dataGridView)
         {
             MesssageBoxPrint(GetShopFromDataGrid(dataGridView).ToString());
@@ -90,20 +68,7 @@ namespace CSharpLB2.ViewModels
                 return;
             }
         }
-        public void GetIncome(DataGridView dataGridView)
-        {
-            MesssageBoxPrint(GetShopFromDataGrid(dataGridView)["Income"].ToString());
-        }
-
-        public void GetSalary(DataGridView dataGridView)
-        {
-            MesssageBoxPrint(GetShopFromDataGrid(dataGridView)["Salary"].ToString());
-        }
-
-        public void GetCosts(DataGridView dataGridView)
-        {
-            MesssageBoxPrint(GetShopFromDataGrid(dataGridView)["Costs"].ToString());
-        }
+        
         private AutoShop GetShopFromDataGrid(DataGridView dataGridView)
         {
             return (AutoShop)dataGridView.CurrentRow.DataBoundItem;

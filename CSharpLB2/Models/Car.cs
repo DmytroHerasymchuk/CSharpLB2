@@ -15,8 +15,8 @@ namespace CSharpLB2.Models
         FuelType FuelType { get; set; }
         public double EngineVolume { get; set; }
         public double FuelPer100KM { get; set; }
-        public uint PriceForShop { get; set; } 
-        public uint PriceForClient {
+        public int PriceForShop { get; set; } 
+        public int PriceForClient {
             get
             {
                 return PriceForClient;
@@ -32,6 +32,18 @@ namespace CSharpLB2.Models
                     PriceForClient = 0;
                 }
             }
+        }
+
+        public Car(CarBrand brand, string name, ControlType controlType, FuelType fuelType, double engineVolume, double fuelPer100KM, int priceForShop, int priceForClient)
+        {
+            Brand = brand;
+            Name = name;
+            ControlType = controlType;
+            FuelType = fuelType;
+            EngineVolume = engineVolume;
+            FuelPer100KM = fuelPer100KM;
+            PriceForShop = priceForShop;
+            PriceForClient = priceForClient;
         }
     }
 }
