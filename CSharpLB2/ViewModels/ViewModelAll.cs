@@ -6,17 +6,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CSharpLB2.Models;
+using CSharpLB2.Models.WorkerEnums;
 using CSharpLB2.Core;
 
 namespace CSharpLB2.ViewModels
 {
-    public class ViewModel
+    public class ViewModelAll
     {
+
         public BindingList<AutoShop> Shops = new BindingList<AutoShop>();
 
-        public void CreateShop(string name,
-                        int numberOfCars,
-                        int numberOfEmployees,
+        public void CreateShop(string name,                    
                         string address,
                         int averageMonthlyMoneyIncome,
                         int allSalaryOfEmployees,
@@ -32,6 +32,7 @@ namespace CSharpLB2.ViewModels
             Shops.Add(shop);
             MesssageBoxPrint("Shop created!");
         }
+        
         
 
         public void Hire(DataGridView dataGridView)
@@ -69,7 +70,7 @@ namespace CSharpLB2.ViewModels
             }
         }
         
-        private AutoShop GetShopFromDataGrid(DataGridView dataGridView)
+        public AutoShop GetShopFromDataGrid(DataGridView dataGridView)
         {
             return (AutoShop)dataGridView.CurrentRow.DataBoundItem;
         }
@@ -81,5 +82,9 @@ namespace CSharpLB2.ViewModels
         {
             MessageBox.Show("Result is: " + text, "Result");
         }
+
+
+
+        
     }
 }

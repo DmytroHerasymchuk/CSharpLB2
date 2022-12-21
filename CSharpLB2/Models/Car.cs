@@ -9,27 +9,24 @@ namespace CSharpLB2.Models
 {
     public class Car
     {
+        private int _priceForClient;
         public CarBrand Brand { get; set; }
         public string Name { get; set; }
         public ControlType ControlType { get; set; }
-        FuelType FuelType { get; set; }
+        public FuelType FuelType { get; set; }
         public double EngineVolume { get; set; }
         public double FuelPer100KM { get; set; }
         public int PriceForShop { get; set; } 
         public int PriceForClient {
             get
             {
-                return PriceForClient;
+                return _priceForClient;
             }
             set
             {
                 if (value > PriceForShop)
                 {
-                    PriceForClient = value;
-                }
-                else
-                {
-                    PriceForClient = 0;
+                    _priceForClient = value;
                 }
             }
         }

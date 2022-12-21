@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CSharpLB2.ViewModels;
 using CSharpLB2.Core;
-
+using CSharpLB2.View;
 namespace CSharpLB2
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        private ViewModel _viewModel;
-        public Form1()
+        private ViewModelAll _viewModel;
+        public MainForm()
         {
             InitializeComponent();
-            _viewModel = new ViewModel();          
+            _viewModel = new ViewModelAll();          
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -50,8 +50,6 @@ namespace CSharpLB2
             if (ValidateChildren(ValidationConstraints.Visible))
             {
                 _viewModel.CreateShop(NameTextBox.Text,
-                                      Convert.ToInt32(CountDepTextBox.Text),
-                                      Convert.ToInt32(CountOfEmployeesTextBox.Text),
                                       AddressTextBox.Text,
                                       Convert.ToInt32(IncomeTextBox.Text),
                                       Convert.ToInt32(BudgetTextBox.Text),
@@ -86,13 +84,6 @@ namespace CSharpLB2
                 _viewModel.ShopToString(AllShopsGrid);
             }
         }
-
-       
-
-       
-
-       
-
 
         private void CompareButton_Click(object sender, EventArgs e)
         {
@@ -145,29 +136,7 @@ namespace CSharpLB2
             }
         }
 
-        private void CountDepTextBox_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrEmpty(CountDepTextBox.Text))
-            {
-                e.Cancel = true;
-                errorProvider1.SetError(CountDepTextBox, "Value should not be left blank!");
 
-            }
-            else
-            {
-                if (int.TryParse(CountDepTextBox.Text, out int i))
-                {
-                    e.Cancel = false;
-                    errorProvider1.SetError(CountDepTextBox, "");
-                }
-                else
-                {
-                    e.Cancel = true;
-                    errorProvider1.SetError(CountDepTextBox, "Value should be integer value!");
-                }
-
-            }
-        }
 
         private void CostsTextBox_Validating(object sender, CancelEventArgs e)
         {
@@ -261,31 +230,23 @@ namespace CSharpLB2
             }
         }
 
-        private void CountOfEmployeesTextBox_Validating(object sender, CancelEventArgs e)
+        private void AddCars_button_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(CountOfEmployeesTextBox.Text))
+            if (CheckGridIsNotEmpty())
             {
-                e.Cancel = true;
-                errorProvider1.SetError(CountOfEmployeesTextBox, "Value should not be left blank!");
-            }
-            else
-            {
-                if (int.TryParse(CountOfEmployeesTextBox.Text, out int i))
-                {
-                    e.Cancel = false;
-                    errorProvider1.SetError(CountOfEmployeesTextBox, "");
-                }
-                else
-                {
-                    e.Cancel = true;
-                    errorProvider1.SetError(CountOfEmployeesTextBox, "Value should be integer value!");
-                }
-
+                EmployeesForm form = new EmployeesForm(_viewModel.GetShopFromDataGrid(AllShopsGrid));
+                form.Show();
             }
         }
 
-        
-
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (CheckGridIsNotEmpty())
+            {
+                CarsForm form = new CarsForm(_viewModel.GetShopFromDataGrid(AllShopsGrid));
+                form.Show();
+            }
+            
+        }
     }
 }

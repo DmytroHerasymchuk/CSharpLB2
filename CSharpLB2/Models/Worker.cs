@@ -9,6 +9,7 @@ namespace CSharpLB2.Models
 {
     public class Worker
     {
+        private int _salary;
         public string Name { get; set; }
         public string LastName { get; set; }
         public string IPN { get; set; }
@@ -19,13 +20,13 @@ namespace CSharpLB2.Models
         {
             get
             {
-                return Salary;
+                return _salary;
             }
             set
             {
-                if(value >= 8000 && value <= 60000)
+                if (value >= 8000 && value <= 60000)
                 {
-                    Salary = value; 
+                    _salary = value;
                 }
             }
         }
@@ -50,7 +51,7 @@ namespace CSharpLB2.Models
             {
                 buffer[i] = numbers[random.Next(numbers.Length)];
             }
-            return buffer.ToString();
+            return new string(buffer);
         }
     }
 }

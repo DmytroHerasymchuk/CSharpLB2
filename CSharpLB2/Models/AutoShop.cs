@@ -10,25 +10,9 @@ namespace CSharpLB2.Models
     public class AutoShop : IComparable<AutoShop>
     {
         public string Name { get; set; }
-        public int NumberOfCars
-        {
-            get
-            {
-                return Cars.Count;
-            }
-
-        }
-        public int NumberOfEmployees
-        {
-            get
-            {
-                return Workers.Count;
-
-            }
-
-        }
+        public int NumberOfCars => Cars.Count;
+        public int NumberOfEmployees => Workers.Count;     
         public string Address { get; set; }
-
         public int AverageMonthlyMoneyIncome { get; set; }
         public int AllSalaryOfEmployees { get; set; }
         public int AllCostsOfGoods { get; set; }

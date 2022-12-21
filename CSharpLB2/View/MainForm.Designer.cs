@@ -1,6 +1,6 @@
 ﻿namespace CSharpLB2
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -29,30 +29,27 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ButtonCreate = new System.Windows.Forms.Button();
             this.CreationPanel = new System.Windows.Forms.Panel();
             this.CreationButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.AddressTextBox = new System.Windows.Forms.TextBox();
             this.BudgetTextBox = new System.Windows.Forms.TextBox();
-            this.CountOfEmployeesTextBox = new System.Windows.Forms.TextBox();
             this.IncomeTextBox = new System.Windows.Forms.TextBox();
             this.CostsTextBox = new System.Windows.Forms.TextBox();
-            this.CountDepTextBox = new System.Windows.Forms.TextBox();
             this.CountOfGoodsTextBox = new System.Windows.Forms.TextBox();
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ListAllButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.ListAllPanel = new System.Windows.Forms.Panel();
+            this.AddCars_button = new System.Windows.Forms.Button();
             this.CompareButton = new System.Windows.Forms.Button();
             this.SecondComboBox = new System.Windows.Forms.ComboBox();
             this.FirstComboBox = new System.Windows.Forms.ComboBox();
@@ -72,6 +69,7 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExitButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.CreationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.ListAllPanel.SuspendLayout();
@@ -95,18 +93,14 @@
             this.CreationPanel.Controls.Add(this.label9);
             this.CreationPanel.Controls.Add(this.AddressTextBox);
             this.CreationPanel.Controls.Add(this.BudgetTextBox);
-            this.CreationPanel.Controls.Add(this.CountOfEmployeesTextBox);
             this.CreationPanel.Controls.Add(this.IncomeTextBox);
             this.CreationPanel.Controls.Add(this.CostsTextBox);
-            this.CreationPanel.Controls.Add(this.CountDepTextBox);
             this.CreationPanel.Controls.Add(this.CountOfGoodsTextBox);
             this.CreationPanel.Controls.Add(this.NameTextBox);
             this.CreationPanel.Controls.Add(this.label8);
             this.CreationPanel.Controls.Add(this.label7);
             this.CreationPanel.Controls.Add(this.label6);
             this.CreationPanel.Controls.Add(this.label5);
-            this.CreationPanel.Controls.Add(this.label4);
-            this.CreationPanel.Controls.Add(this.label3);
             this.CreationPanel.Controls.Add(this.label2);
             this.CreationPanel.Controls.Add(this.label1);
             this.CreationPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -145,23 +139,15 @@
             // 
             // BudgetTextBox
             // 
-            this.BudgetTextBox.Location = new System.Drawing.Point(11, 239);
+            this.BudgetTextBox.Location = new System.Drawing.Point(11, 178);
             this.BudgetTextBox.Name = "BudgetTextBox";
             this.BudgetTextBox.Size = new System.Drawing.Size(205, 26);
             this.BudgetTextBox.TabIndex = 14;
             this.BudgetTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.BudgetTextBox_Validating);
             // 
-            // CountOfEmployeesTextBox
-            // 
-            this.CountOfEmployeesTextBox.Location = new System.Drawing.Point(420, 239);
-            this.CountOfEmployeesTextBox.Name = "CountOfEmployeesTextBox";
-            this.CountOfEmployeesTextBox.Size = new System.Drawing.Size(193, 26);
-            this.CountOfEmployeesTextBox.TabIndex = 13;
-            this.CountOfEmployeesTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.CountOfEmployeesTextBox_Validating);
-            // 
             // IncomeTextBox
             // 
-            this.IncomeTextBox.Location = new System.Drawing.Point(11, 178);
+            this.IncomeTextBox.Location = new System.Drawing.Point(11, 116);
             this.IncomeTextBox.Name = "IncomeTextBox";
             this.IncomeTextBox.Size = new System.Drawing.Size(205, 26);
             this.IncomeTextBox.TabIndex = 12;
@@ -174,14 +160,6 @@
             this.CostsTextBox.Size = new System.Drawing.Size(193, 26);
             this.CostsTextBox.TabIndex = 11;
             this.CostsTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.CostsTextBox_Validating);
-            // 
-            // CountDepTextBox
-            // 
-            this.CountDepTextBox.Location = new System.Drawing.Point(11, 116);
-            this.CountDepTextBox.Name = "CountDepTextBox";
-            this.CountDepTextBox.Size = new System.Drawing.Size(205, 26);
-            this.CountDepTextBox.TabIndex = 10;
-            this.CountDepTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.CountDepTextBox_Validating);
             // 
             // CountOfGoodsTextBox
             // 
@@ -211,7 +189,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 216);
+            this.label7.Location = new System.Drawing.Point(7, 155);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(133, 20);
             this.label7.TabIndex = 6;
@@ -229,29 +207,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 155);
+            this.label5.Location = new System.Drawing.Point(7, 93);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(180, 20);
             this.label5.TabIndex = 4;
             this.label5.Text = "Average Month Income";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(416, 216);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(157, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Count of employees";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 93);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(170, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Count of departments";
             // 
             // label2
             // 
@@ -288,6 +248,8 @@
             // 
             // ListAllPanel
             // 
+            this.ListAllPanel.Controls.Add(this.button1);
+            this.ListAllPanel.Controls.Add(this.AddCars_button);
             this.ListAllPanel.Controls.Add(this.CompareButton);
             this.ListAllPanel.Controls.Add(this.SecondComboBox);
             this.ListAllPanel.Controls.Add(this.FirstComboBox);
@@ -299,10 +261,20 @@
             this.ListAllPanel.Controls.Add(this.label11);
             this.ListAllPanel.Controls.Add(this.AllShopsGrid);
             this.ListAllPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ListAllPanel.Location = new System.Drawing.Point(12, 52);
+            this.ListAllPanel.Location = new System.Drawing.Point(2, 52);
             this.ListAllPanel.Name = "ListAllPanel";
-            this.ListAllPanel.Size = new System.Drawing.Size(1644, 659);
+            this.ListAllPanel.Size = new System.Drawing.Size(1457, 677);
             this.ListAllPanel.TabIndex = 3;
+            // 
+            // AddCars_button
+            // 
+            this.AddCars_button.Location = new System.Drawing.Point(365, 466);
+            this.AddCars_button.Name = "AddCars_button";
+            this.AddCars_button.Size = new System.Drawing.Size(137, 74);
+            this.AddCars_button.TabIndex = 23;
+            this.AddCars_button.Text = "Employees";
+            this.AddCars_button.UseVisualStyleBackColor = true;
+            this.AddCars_button.Click += new System.EventHandler(this.AddCars_button_Click);
             // 
             // CompareButton
             // 
@@ -407,20 +379,20 @@
             this.Column6,
             this.Column7,
             this.Column8});
-            this.AllShopsGrid.Location = new System.Drawing.Point(0, 0);
+            this.AllShopsGrid.Location = new System.Drawing.Point(11, 29);
             this.AllShopsGrid.Name = "AllShopsGrid";
             this.AllShopsGrid.RowHeadersWidth = 51;
             this.AllShopsGrid.RowTemplate.Height = 24;
-            this.AllShopsGrid.Size = new System.Drawing.Size(1405, 430);
+            this.AllShopsGrid.Size = new System.Drawing.Size(1394, 401);
             this.AllShopsGrid.TabIndex = 0;
             this.AllShopsGrid.VirtualMode = true;
             // 
             // Column1
             // 
             this.Column1.DataPropertyName = "Name";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.NullValue = null;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.NullValue = null;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column1.HeaderText = "Name";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
@@ -440,8 +412,8 @@
             // 
             // Column3
             // 
-            this.Column3.DataPropertyName = "NumberOfDepartments";
-            this.Column3.HeaderText = "Number of Departments";
+            this.Column3.DataPropertyName = "NumberOfCars";
+            this.Column3.HeaderText = "Number of Cars";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -509,6 +481,16 @@
             this.ExitButton.UseVisualStyleBackColor = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(584, 466);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(137, 74);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "Cars";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -538,18 +520,14 @@
         private System.Windows.Forms.Button ListAllButton;
         private System.Windows.Forms.TextBox AddressTextBox;
         private System.Windows.Forms.TextBox BudgetTextBox;
-        private System.Windows.Forms.TextBox CountOfEmployeesTextBox;
         private System.Windows.Forms.TextBox IncomeTextBox;
         private System.Windows.Forms.TextBox CostsTextBox;
-        private System.Windows.Forms.TextBox CountDepTextBox;
         private System.Windows.Forms.TextBox CountOfGoodsTextBox;
         private System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button CreationButton;
@@ -557,14 +535,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Panel ListAllPanel;
         private System.Windows.Forms.DataGridView AllShopsGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.Button FireEmployeeButton;
         private System.Windows.Forms.Button HireEmployeeButton;
         private System.Windows.Forms.Label label11;
@@ -575,6 +545,16 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button CompareButton;
         private System.Windows.Forms.Button ExitButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.Button AddCars_button;
+        private System.Windows.Forms.Button button1;
     }
 }
 
