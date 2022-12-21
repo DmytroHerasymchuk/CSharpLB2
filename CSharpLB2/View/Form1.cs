@@ -64,7 +64,7 @@ namespace CSharpLB2
             if (CheckGridIsNotEmpty() && Validator.Validate(MonthTextBox.Text))
             {
                 int countMonth = Convert.ToInt32(MonthTextBox.Text);
-                _viewModel.CalculateIncomeYear(AllShopsGrid, countMonth);
+                _viewModel.CalculateIncomeMonth(AllShopsGrid, countMonth);
             }
         }
 
