@@ -44,5 +44,10 @@ namespace CSharpLB2.ViewModels
         {
             Shop.FireEmployee(IPN);
         }
+
+        public Car FindCar(string brandName)
+        {
+            return Shop.Cars.FirstOrDefault(a=>a.BrandName==brandName);
+        }
     }
 }

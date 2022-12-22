@@ -29,12 +29,15 @@ namespace CSharpLB2.View
 
         private void CreatePerson_Click(object sender, EventArgs e)
         {
-            _viewModel.CreateWorker(NameTB.Text,
-                                    LastNameTB.Text,
-                                    (Education)EducationCB.SelectedItem,
-                                    (Position)PositionCB.SelectedItem,
-                                    DateTime.Parse(BirthdayDT.Text),
-                                    Convert.ToInt32(SalaryTB.Text));
+            if (ValidateChildren(ValidationConstraints.ImmediateChildren))
+            {
+                _viewModel.CreateWorker(NameTB.Text,
+                                        LastNameTB.Text,
+                                        (Education)EducationCB.SelectedItem,
+                                        (Position)PositionCB.SelectedItem,
+                                        DateTime.Parse(BirthdayDT.Text),
+                                        Convert.ToInt32(SalaryTB.Text));
+            }
         }
 
         private void FireIPNButton_Click(object sender, EventArgs e)
@@ -66,12 +69,12 @@ namespace CSharpLB2.View
             if (string.IsNullOrEmpty(LastNameTB.Text))
             {
                 e.Cancel = true;
-                errorProvider1.SetError(NameTB, "Lastname should not be left blank!");
+                errorProvider1.SetError(LastNameTB, "Lastname should not be left blank!");
             }
             else
             {
                 e.Cancel = false;
-                errorProvider1.SetError(NameTB, "");
+                errorProvider1.SetError(LastNameTB, "");
             }
         }
 
@@ -100,7 +103,33 @@ namespace CSharpLB2.View
 
         private void IpnTB_Validating(object sender, CancelEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(IpnTB.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(IpnTB, "IPN should not be left blank!");
+            }
+            else
+            {
+                if (!Int64.TryParse(IpnTB.Text, out Int64 i))
+                {
+                    e.Cancel = true;
+                    errorProvider1.SetError(IpnTB, "IPN must be a number!");
+                }
+                else
+                {
+                    if (IpnTB.Text.Length == 10)
+                    {
+                        e.Cancel = false;
+                        errorProvider1.SetError(IpnTB, "");
+                    }
+                    else
+                    {
+                        e.Cancel = true;
+                        errorProvider1.SetError(IpnTB, "IPN is 10 numeric number!");
+                    }
+                }
+                
+            }
         }
     }
 }

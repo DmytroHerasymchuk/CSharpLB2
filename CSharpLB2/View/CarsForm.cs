@@ -24,7 +24,10 @@ namespace CSharpLB2.View
             _viewModel = new ViewModelShop(shop);
             BrandCB.DataSource = Enum.GetValues(typeof(CarBrand));
             ControlCB.DataSource = Enum.GetValues(typeof(ControlType));
-            FuelCB.DataSource = Enum.GetValues(typeof(FuelType)); 
+            FuelCB.DataSource = Enum.GetValues(typeof(FuelType));
+            SellBrandCB.DataSource = _viewModel.Shop.Cars;
+            SellBrandCB.DisplayMember = "BrandName";
+            SellBrandCB.ValueMember = "BrandName";
         }
 
         private void BuyButton_Click(object sender, EventArgs e)
@@ -169,6 +172,18 @@ namespace CSharpLB2.View
                     errorProvider1.SetError(QuantityTB, "Value should be integer value!");
                 }
 
+            }
+        }
+
+        private void SellButton_Click(object sender, EventArgs e)
+        {
+            if (SellBrandCB.Items.Count > 0)
+            {
+                _viewModel.SellCar(_viewModel.FindCar(SellBrandCB.Text));
+            }
+            else
+            {
+                MessageBox.Show("Is no cars for selling!", "Result");
             }
         }
     }

@@ -51,8 +51,11 @@
             this.NameTB = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.SellBrandCB = new System.Windows.Forms.ComboBox();
+            this.SellButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -174,7 +177,7 @@
             // 
             // BuyButton
             // 
-            this.BuyButton.Location = new System.Drawing.Point(192, 410);
+            this.BuyButton.Location = new System.Drawing.Point(121, 410);
             this.BuyButton.Margin = new System.Windows.Forms.Padding(4);
             this.BuyButton.Name = "BuyButton";
             this.BuyButton.Size = new System.Drawing.Size(198, 49);
@@ -253,12 +256,33 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.SellButton);
+            this.groupBox2.Controls.Add(this.SellBrandCB);
             this.groupBox2.Location = new System.Drawing.Point(484, 31);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(407, 492);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sell";
+            // 
+            // SellBrandCB
+            // 
+            this.SellBrandCB.FormattingEnabled = true;
+            this.SellBrandCB.Location = new System.Drawing.Point(45, 73);
+            this.SellBrandCB.Name = "SellBrandCB";
+            this.SellBrandCB.Size = new System.Drawing.Size(314, 28);
+            this.SellBrandCB.TabIndex = 6;
+            // 
+            // SellButton
+            // 
+            this.SellButton.Location = new System.Drawing.Point(97, 410);
+            this.SellButton.Margin = new System.Windows.Forms.Padding(4);
+            this.SellButton.Name = "SellButton";
+            this.SellButton.Size = new System.Drawing.Size(198, 49);
+            this.SellButton.TabIndex = 9;
+            this.SellButton.Text = "Sell";
+            this.SellButton.UseVisualStyleBackColor = true;
+            this.SellButton.Click += new System.EventHandler(this.SellButton_Click);
             // 
             // CarsForm
             // 
@@ -274,6 +298,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -302,5 +327,7 @@
         private System.Windows.Forms.Button BuyButton;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button SellButton;
+        private System.Windows.Forms.ComboBox SellBrandCB;
     }
 }

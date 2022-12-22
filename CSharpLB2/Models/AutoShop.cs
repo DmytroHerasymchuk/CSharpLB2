@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CSharpLB2.Models.CarEnums;
+using System.ComponentModel;
 
 namespace CSharpLB2.Models
 {
@@ -17,7 +18,7 @@ namespace CSharpLB2.Models
         public int AllSalaryOfEmployees { get; set; }
         public int AllCostsOfGoods { get; set; }
         public int CountOfGoods { get; set; }
-        public List<Car> Cars = new List<Car>();
+        public BindingList<Car> Cars = new BindingList<Car>();
         private Dictionary<string, Worker> Workers = new Dictionary<string, Worker>();
         public AutoShop(string name,
                         string address,
@@ -65,6 +66,7 @@ namespace CSharpLB2.Models
 
         public void SellCar(Car car)
         {
+
             Cars.Remove(car);
             AllCostsOfGoods += car.PriceForClient;
         }

@@ -9,6 +9,7 @@ namespace CSharpLB2.Models
 {
     public class Car
     {
+        public string BrandName => Brand.ToString() + " " + Name;
         private int _priceForClient;
         public CarBrand Brand { get; set; }
         public string Name { get; set; }
