@@ -29,7 +29,7 @@ namespace CSharpLB2.View
 
         private void CreatePerson_Click(object sender, EventArgs e)
         {
-            if (ValidateChildren(ValidationConstraints.ImmediateChildren))
+            if (ValidateChildren(ValidationConstraints.TabStop))
             {
                 _viewModel.CreateWorker(NameTB.Text,
                                         LastNameTB.Text,
@@ -42,7 +42,10 @@ namespace CSharpLB2.View
 
         private void FireIPNButton_Click(object sender, EventArgs e)
         {
-            _viewModel.FireByIPN(IpnTB.Text);
+            if (Validator.Validate(IpnTB.Text))
+            {
+                _viewModel.FireByIPN(IpnTB.Text);
+            }
         }
 
         private void FireAllButton_Click(object sender, EventArgs e)
@@ -130,6 +133,11 @@ namespace CSharpLB2.View
                 }
                 
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            _viewModel.WriteWorkers();
         }
     }
 }

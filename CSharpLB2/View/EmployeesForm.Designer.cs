@@ -49,6 +49,7 @@
             this.FireAllButton = new System.Windows.Forms.Button();
             this.FireIPNButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -223,6 +224,7 @@
             this.IpnTB.Name = "IpnTB";
             this.IpnTB.Size = new System.Drawing.Size(143, 27);
             this.IpnTB.TabIndex = 9;
+            this.IpnTB.TabStop = false;
             this.IpnTB.Validating += new System.ComponentModel.CancelEventHandler(this.IpnTB_Validating);
             // 
             // FireAllButton
@@ -251,11 +253,23 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(28, 531);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(198, 49);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Test";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // EmployeesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1016, 525);
+            this.ClientSize = new System.Drawing.Size(1016, 610);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -293,5 +307,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox IpnTB;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button button1;
     }
 }

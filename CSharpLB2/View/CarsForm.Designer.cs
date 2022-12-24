@@ -51,8 +51,9 @@
             this.NameTB = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.SellBrandCB = new System.Windows.Forms.ComboBox();
             this.SellButton = new System.Windows.Forms.Button();
+            this.SellBrandCB = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -265,14 +266,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sell";
             // 
-            // SellBrandCB
-            // 
-            this.SellBrandCB.FormattingEnabled = true;
-            this.SellBrandCB.Location = new System.Drawing.Point(45, 73);
-            this.SellBrandCB.Name = "SellBrandCB";
-            this.SellBrandCB.Size = new System.Drawing.Size(314, 28);
-            this.SellBrandCB.TabIndex = 6;
-            // 
             // SellButton
             // 
             this.SellButton.Location = new System.Drawing.Point(97, 410);
@@ -284,11 +277,31 @@
             this.SellButton.UseVisualStyleBackColor = true;
             this.SellButton.Click += new System.EventHandler(this.SellButton_Click);
             // 
+            // SellBrandCB
+            // 
+            this.SellBrandCB.FormattingEnabled = true;
+            this.SellBrandCB.Location = new System.Drawing.Point(45, 73);
+            this.SellBrandCB.Name = "SellBrandCB";
+            this.SellBrandCB.Size = new System.Drawing.Size(314, 28);
+            this.SellBrandCB.TabIndex = 6;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(369, 551);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(198, 49);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Test";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // CarsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 562);
+            this.ClientSize = new System.Drawing.Size(1000, 631);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -329,5 +342,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button SellButton;
         private System.Windows.Forms.ComboBox SellBrandCB;
+        private System.Windows.Forms.Button button1;
     }
 }

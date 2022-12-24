@@ -28,18 +28,22 @@ namespace CSharpLB2.Models
                 {
                     _salary = value;
                 }
+                else
+                {
+                    _salary = 0;
+                }
             }
         }
 
         public Worker(string name, string lastName, Education education, Position position, DateTime birthday, int salary)
         {
             Name = name;
-            LastName = lastName;
-            IPN = GenerateIPN();
+            LastName = lastName;          
             Education = education;
             Position = position;
             Birthday = birthday;
             Salary = salary;
+            IPN = GenerateIPN();
         }
 
         private string GenerateIPN()

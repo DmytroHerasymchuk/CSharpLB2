@@ -13,10 +13,7 @@ namespace CSharpLB2.Core
 
             if (!string.IsNullOrEmpty(text))
             {
-                if(int.TryParse(text, out int i))
-                {
-                    return true;
-                }
+                return true;
             }
             return false;
         }

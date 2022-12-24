@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CSharpLB2.Models.CarEnums;
+using Newtonsoft.Json;
 
 namespace CSharpLB2.Models
 {
     public class Car
     {
+        [JsonIgnore]
         public string BrandName => Brand.ToString() + " " + Name;
         private int _priceForClient;
         public CarBrand Brand { get; set; }
@@ -28,6 +30,10 @@ namespace CSharpLB2.Models
                 if (value > PriceForShop)
                 {
                     _priceForClient = value;
+                }
+                else
+                {
+                    _priceForClient = PriceForShop + 1000;
                 }
             }
         }

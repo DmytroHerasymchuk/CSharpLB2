@@ -186,5 +186,10 @@ namespace CSharpLB2.View
                 MessageBox.Show("Is no cars for selling!", "Result");
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FileWorker.Write(_viewModel.Shop.Cars.ToList(), "Cars");
+        }
     }
 }

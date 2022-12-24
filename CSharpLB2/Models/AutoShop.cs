@@ -19,7 +19,7 @@ namespace CSharpLB2.Models
         public int AllCostsOfGoods { get; set; }
         public int CountOfGoods { get; set; }
         public BindingList<Car> Cars = new BindingList<Car>();
-        private Dictionary<string, Worker> Workers = new Dictionary<string, Worker>();
+        public Dictionary<string, Worker> Workers = new Dictionary<string, Worker>();
         public AutoShop(string name,
                         string address,
                         int averageMonthlyMoneyIncome,
@@ -44,10 +44,8 @@ namespace CSharpLB2.Models
         }
         public void FireEmployee(string IPN)
         {
-            if (NumberOfEmployees > 0)
-            {
-                Workers.Remove(IPN);
-            }
+            Workers.Remove(IPN);
+
         }
 
         public void FireAll()
@@ -59,6 +57,10 @@ namespace CSharpLB2.Models
         {
             for(int i = 0; i < quantity; i++)
             {
+                if (car.PriceForShop > AllCostsOfGoods)
+                {
+                    return;
+                }
                 Cars.Add(car);
                 AllCostsOfGoods -= car.PriceForShop;
             }
@@ -85,5 +87,7 @@ namespace CSharpLB2.Models
             if (shop is null) throw new ArgumentException("Inccorect parameter");
             return NumberOfCars - shop.NumberOfCars;
         }
+
+        
     }
 }

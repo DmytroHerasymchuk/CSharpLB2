@@ -10,15 +10,27 @@ using System.Windows.Forms;
 using CSharpLB2.ViewModels;
 using CSharpLB2.Core;
 using CSharpLB2.View;
+using CSharpLB2.Models;
+
+using System.IO;
+using System.Threading.Tasks;
+using System.Text.Json;
+
+
 namespace CSharpLB2
 {
     public partial class MainForm : Form
     {
+        private readonly string _pathWorkers = @"ShopData\Workers.json";
+        private readonly string _pathCars = @"ShopData\Cars.json";
+        private readonly string _pathShops = @"ShopData\Shops.json";
         private ViewModelAll _viewModel;
         public MainForm()
         {
             InitializeComponent();
-            _viewModel = new ViewModelAll();          
+            _viewModel = new ViewModelAll();
+            FileWorker.CreateDirectory();
+
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -58,24 +70,6 @@ namespace CSharpLB2
             }
         }
         
-
-        private void HireEmployeeButton_Click(object sender, EventArgs e)
-        {
-            if (CheckGridIsNotEmpty())
-            {
-                _viewModel.Hire(AllShopsGrid);
-                AllShopsGrid.Refresh();
-            }
-        }
-
-        private void FireEmployeeButton_Click(object sender, EventArgs e)
-        {
-            if (CheckGridIsNotEmpty())
-            {
-                _viewModel.Fire(AllShopsGrid);
-                AllShopsGrid.Refresh();
-            }
-        }
 
         private void ToStringButton_Click(object sender, EventArgs e)
         {
@@ -247,6 +241,101 @@ namespace CSharpLB2
                 form.Show();
             }
             
+        }
+
+
+
+
+        
+
+        private async Task<List<AutoShop>> DeserializeAsync()
+        {
+            using (FileStream stream = new FileStream(_pathShops, FileMode.OpenOrCreate))
+            {
+                List<AutoShop> shops = await JsonSerializer.DeserializeAsync<List<AutoShop>>(stream);
+                return shops;
+            }
+        }
+
+
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+        private async void LoadButton_Click(object sender, EventArgs e)
+        {
+           
+                List<AutoShop> shops = await DeserializeAsync();
+
+                AllShopsGrid.DataSource = shops;
+            
+        }
+        private async void button4_Click(object sender, EventArgs e)
+        {
+            var shops_list = new List<AutoShop>();
+
+            foreach (DataGridViewRow row in AllShopsGrid.Rows)
+            {
+                if (row != null)
+                    shops_list.Add((AutoShop)row.DataBoundItem);
+            }
+
+            await SerializeAsync(shops_list);
+
+            UnloadAsync();
+        }
+
+        private async Task SerializeAsync(List<AutoShop> shops)
+        {
+            using (var stream = new FileStream(_pathShops, FileMode.OpenOrCreate))
+            {
+                await JsonSerializer.SerializeAsync<List<AutoShop>>(stream, shops);
+            }
+        }
+        private async void UnloadAsync()
+        {
+            var cars = new List<Car>();
+            var workers = new Dictionary<string, Worker>();
+            foreach (DataGridViewRow item in AllShopsGrid.Rows)
+            {
+                var shop = (AutoShop)item.DataBoundItem;
+
+                foreach (var car in shop.Cars)
+                {
+                    cars.Add(car);
+                }
+                foreach (var worker in shop.Workers)
+                {
+                    workers.Add(worker.Key,worker.Value);
+                }
+            }
+
+            await SerializeCarsAsync(cars);
+            await SerializeWorkersAsync(workers);
+        }
+
+        private async Task SerializeCarsAsync(List<Car> cars)
+        {
+            using (var stream = new FileStream(_pathCars, FileMode.OpenOrCreate))
+            {
+                await JsonSerializer.SerializeAsync<List<Car>>(stream, cars);
+            }
+        }
+        private async Task SerializeWorkersAsync(Dictionary<string, Worker> workers)
+        {
+            using (var stream = new FileStream(_pathWorkers, FileMode.OpenOrCreate))
+            {
+                await JsonSerializer.SerializeAsync<Dictionary<string,Worker>>(stream, workers);
+            }
         }
     }
 }

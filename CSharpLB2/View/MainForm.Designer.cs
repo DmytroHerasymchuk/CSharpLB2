@@ -49,6 +49,9 @@
             this.ListAllButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.ListAllPanel = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.SaveButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.AddCars_button = new System.Windows.Forms.Button();
             this.CompareButton = new System.Windows.Forms.Button();
             this.SecondComboBox = new System.Windows.Forms.ComboBox();
@@ -56,9 +59,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.ToStringButton = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.FireEmployeeButton = new System.Windows.Forms.Button();
-            this.HireEmployeeButton = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
             this.AllShopsGrid = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,7 +69,6 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExitButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.CreationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.ListAllPanel.SuspendLayout();
@@ -248,6 +247,8 @@
             // 
             // ListAllPanel
             // 
+            this.ListAllPanel.Controls.Add(this.button4);
+            this.ListAllPanel.Controls.Add(this.SaveButton);
             this.ListAllPanel.Controls.Add(this.button1);
             this.ListAllPanel.Controls.Add(this.AddCars_button);
             this.ListAllPanel.Controls.Add(this.CompareButton);
@@ -256,9 +257,6 @@
             this.ListAllPanel.Controls.Add(this.label15);
             this.ListAllPanel.Controls.Add(this.ToStringButton);
             this.ListAllPanel.Controls.Add(this.label12);
-            this.ListAllPanel.Controls.Add(this.FireEmployeeButton);
-            this.ListAllPanel.Controls.Add(this.HireEmployeeButton);
-            this.ListAllPanel.Controls.Add(this.label11);
             this.ListAllPanel.Controls.Add(this.AllShopsGrid);
             this.ListAllPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ListAllPanel.Location = new System.Drawing.Point(2, 52);
@@ -266,9 +264,39 @@
             this.ListAllPanel.Size = new System.Drawing.Size(1457, 677);
             this.ListAllPanel.TabIndex = 3;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(253, 579);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(115, 40);
+            this.button4.TabIndex = 27;
+            this.button4.Text = "Save";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.Location = new System.Drawing.Point(253, 483);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(115, 40);
+            this.SaveButton.TabIndex = 25;
+            this.SaveButton.Text = "Load";
+            this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.LoadButton_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(13, 562);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(137, 74);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "Cars";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // AddCars_button
             // 
-            this.AddCars_button.Location = new System.Drawing.Point(365, 466);
+            this.AddCars_button.Location = new System.Drawing.Point(13, 466);
             this.AddCars_button.Name = "AddCars_button";
             this.AddCars_button.Size = new System.Drawing.Size(137, 74);
             this.AddCars_button.TabIndex = 23;
@@ -316,7 +344,7 @@
             // 
             // ToStringButton
             // 
-            this.ToStringButton.Location = new System.Drawing.Point(889, 596);
+            this.ToStringButton.Location = new System.Drawing.Point(880, 483);
             this.ToStringButton.Name = "ToStringButton";
             this.ToStringButton.Size = new System.Drawing.Size(115, 40);
             this.ToStringButton.TabIndex = 10;
@@ -328,41 +356,11 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(908, 563);
+            this.label12.Location = new System.Drawing.Point(900, 450);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(77, 20);
             this.label12.TabIndex = 9;
             this.label12.Text = "To String";
-            // 
-            // FireEmployeeButton
-            // 
-            this.FireEmployeeButton.Location = new System.Drawing.Point(146, 483);
-            this.FireEmployeeButton.Name = "FireEmployeeButton";
-            this.FireEmployeeButton.Size = new System.Drawing.Size(115, 40);
-            this.FireEmployeeButton.TabIndex = 8;
-            this.FireEmployeeButton.Text = "Fire";
-            this.FireEmployeeButton.UseVisualStyleBackColor = true;
-            this.FireEmployeeButton.Click += new System.EventHandler(this.FireEmployeeButton_Click);
-            // 
-            // HireEmployeeButton
-            // 
-            this.HireEmployeeButton.Location = new System.Drawing.Point(11, 483);
-            this.HireEmployeeButton.Name = "HireEmployeeButton";
-            this.HireEmployeeButton.Size = new System.Drawing.Size(115, 40);
-            this.HireEmployeeButton.TabIndex = 7;
-            this.HireEmployeeButton.Text = "Hire";
-            this.HireEmployeeButton.UseVisualStyleBackColor = true;
-            this.HireEmployeeButton.Click += new System.EventHandler(this.HireEmployeeButton_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(86, 450);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(91, 20);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "Employees";
             // 
             // AllShopsGrid
             // 
@@ -481,17 +479,7 @@
             this.ExitButton.UseVisualStyleBackColor = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(584, 466);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(137, 74);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Cars";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -501,7 +489,7 @@
             this.Controls.Add(this.ListAllPanel);
             this.Controls.Add(this.CreationPanel);
             this.Controls.Add(this.ButtonCreate);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.CreationPanel.ResumeLayout(false);
             this.CreationPanel.PerformLayout();
@@ -535,9 +523,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Panel ListAllPanel;
         private System.Windows.Forms.DataGridView AllShopsGrid;
-        private System.Windows.Forms.Button FireEmployeeButton;
-        private System.Windows.Forms.Button HireEmployeeButton;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button ToStringButton;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox SecondComboBox;
@@ -555,6 +540,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.Button AddCars_button;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Button button4;
     }
 }
 

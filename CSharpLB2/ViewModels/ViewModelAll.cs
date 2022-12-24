@@ -32,18 +32,7 @@ namespace CSharpLB2.ViewModels
             Shops.Add(shop);
             MesssageBoxPrint("Shop created!");
         }
-        
-        
-
-        public void Hire(DataGridView dataGridView)
-        {
-            //GetShopFromDataGrid(dataGridView).HireEmployee();
-        }
-        public void Fire(DataGridView dataGridView)
-        {
-            //GetShopFromDataGrid(dataGridView).FireEmployee();
-        }
-        
+                
         public void ShopToString(DataGridView dataGridView)
         {
             MesssageBoxPrint(GetShopFromDataGrid(dataGridView).ToString());
